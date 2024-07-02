@@ -25,7 +25,7 @@ def prime_generator(start: int, end: int) -> list[int]:
     if start > end:
         #input correction if 1st number is greater than 2nd number
         start, end = end, start
-    return [number for number in range(start, end + 1) if prime(number)]
+    return [number for number in range(start, end + 1) if is_prime(number)]
 
 # Command-line interface output
 def main(start: int, end: int):
