@@ -32,5 +32,28 @@ def main(start: int, end: int):
     primes = prime_generator(start, end)
     print(f"Prime numbers between {start} and {end}: {primes}")
 
+#Class that tests functions
+class TestFunctions(unittest.TestCase):
+
+    #tests prime boolean functionality
+    def test_is_prime(self):
+        self.assertFalse(prime(24))
+        self.assertFalse(prime(72))
+        self.assertTrue(prime(127))
+        self.assertTrue(prime(137))
+        self.assertFalse(prime(240))
+        self.assertTrue(prime(277))
+        self.assertFalse(prime(280))
+        self.assertTrue(prime(293))
+
+    #prime number generator output validity check
+    def test_prime_generator(self):
+        self.assertEqual(prime_generator(1, 10), [2, 3, 5, 7])
+        self.assertEqual(prime_generator(10, 1), [2, 3, 5, 7])
+        self.assertEqual(prime_generator(7900, 7920), [7901, 7907, 7919])
+
+# Running the tests
+unittest.main(argv=[''], verbosity=2, exit=False)
+
 # Run the main function and input with a specific range (example: 1 {Enter Key}, 10 {Enter Key})
 main(int(input("Input starting number: ")), int(input("Input ending number: ")))
