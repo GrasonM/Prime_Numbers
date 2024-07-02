@@ -3,7 +3,7 @@ import unittest
 #Written and edited in Jupyter Notebook by Grason Moye
 
 # returns true or false for prime numbers within provided range 
-def prime(value: int) -> bool:
+def is_prime(value: int) -> bool:
     #1 is neither prime nor composite
     if value <= 1:
         return False
