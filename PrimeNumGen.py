@@ -3,7 +3,7 @@ import unittest
 #Written and edited in Jupyter Notebook by Grason Moye
 
 # returns true or false for prime numbers within provided range 
-def prime(value: int) -> bool:
+def is_prime(value: int) -> bool:
     #1 is neither prime nor composite
     if value <= 1:
         return False
@@ -25,7 +25,7 @@ def prime_generator(start: int, end: int) -> list[int]:
     if start > end:
         #input correction if 1st number is greater than 2nd number
         start, end = end, start
-    return [number for number in range(start, end + 1) if prime(number)]
+    return [number for number in range(start, end + 1) if is_prime(number)]
 
 # Command-line interface output
 def main(start: int, end: int):
@@ -37,14 +37,14 @@ class TestFunctions(unittest.TestCase):
 
     #tests prime boolean functionality
     def test_is_prime(self):
-        self.assertFalse(prime(24))
-        self.assertFalse(prime(72))
-        self.assertTrue(prime(127))
-        self.assertTrue(prime(137))
-        self.assertFalse(prime(240))
-        self.assertTrue(prime(277))
-        self.assertFalse(prime(280))
-        self.assertTrue(prime(293))
+        self.assertFalse(is_prime(24))
+        self.assertFalse(is_prime(72))
+        self.assertTrue(is_prime(127))
+        self.assertTrue(is_prime(137))
+        self.assertFalse(is_prime(240))
+        self.assertTrue(is_prime(277))
+        self.assertFalse(is_prime(280))
+        self.assertTrue(is_prime(293))
 
     #prime number generator output validity check
     def test_prime_generator(self):
